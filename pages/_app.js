@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+//import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import "../styles/globals.css";
+import GlobalProvider from "../context/Provider";
 
-export default MyApp
+import { wrapper } from "../redux/store";
+
+const App = ({ Component, pageProps }) => {
+  return (
+    <GlobalProvider>
+      <Component {...pageProps} />
+    </GlobalProvider>
+  );
+};
+//export default App;
+export default wrapper.withRedux(App);
