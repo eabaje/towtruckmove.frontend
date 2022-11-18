@@ -147,14 +147,35 @@ function Intro() {
                             </label>
                             <select
                               className="form-select form-voyage-select input-box"
-                              id="inputPersonOne"
+                              id="VehicleType"
                             >
-                              <option selected="selected">2 Adults</option>
-                              <option>2 Adults 1 children</option>
-                              <option>2 Adults 2 children</option>
+                              <option selected="selected">Vehicle Type</option>
+                              <option>Sedan</option>
+                              <option>SUV</option>
+                              <option>Truck</option>
+                              <option>Articulated Vehicle</option>
                             </select>
                             <span className="nav-link-icon text-800 fs--1 input-box-icon">
-                              <i className="fas fa-user"> </i>
+                              <i className="fas fa-car"> </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div className="col-sm-6 col-md-6 col-xl-5">
+                          <div className="input-group-icon">
+                            <label
+                              className="form-label visually-hidden"
+                              for="inputPersonOne"
+                            >
+                              Person
+                            </label>
+                            <input
+                              className="form-control input-box form-voyage-control"
+                              id="inputAddress1"
+                              type="text"
+                              placeholder="Vehicle Number"
+                            />
+                            <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                              <i className="fas fa-car"> </i>
                             </span>
                           </div>
                         </div>
@@ -330,48 +351,48 @@ function Intro() {
       </section>
 
       <section
-        class="fw-main-row  ls section_padding_top_50 section_padding_bottom_50 columns_padding_0"
+        className="fw-main-row  ls section_padding_top_50 section_padding_bottom_50 columns_padding_0"
         id="about"
       >
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             <div
-              class="fw-column col-xs-12 col-md-6 to_animate text-center col-lg-7"
+              className="fw-column col-xs-12 col-md-6 to_animate text-center col-lg-7"
               data-animation="fadeInLeft"
             >
-              <div class="fw-column-inner padding_30">
+              <div className="fw-column-inner padding_30">
                 <img
-                  class="shortcode-media-image"
+                  className="shortcode-media-image"
                   src={"assets/img/truck.png"}
                   alt="assets/img/truck.png"
                 />{" "}
               </div>
             </div>
             <div
-              class="fw-column col-xs-12 col-md-6 to_animate text-left col-lg-5"
+              className="fw-column col-xs-12 col-md-6 to_animate text-left col-lg-5"
               data-animation="fadeInRight"
             >
-              <div class="fw-column-inner">
-                <div class="numbered-header text-left">
-                  <h3 class=" section_header ">
-                    <span class=" thin text-uppercase">
+              <div className="fw-column-inner">
+                <div className="numbered-header text-left">
+                  <h3 className=" section_header ">
+                    <span className=" thin text-uppercase">
                       What <strong>WE OFFER</strong>{" "}
                     </span>
                   </h3>
-                  <p class="  paragraph">
-                    <span class="  text-uppercase">
+                  <p className="  paragraph">
+                    <span className="  text-uppercase">
                       effective flatbed transportation{" "}
                     </span>
                   </p>
                 </div>
-                <div class="fw-divider-zebra">
-                  <hr class="zebra_bg divider_left" />
+                <div className="fw-divider-zebra">
+                  <hr className="zebra_bg divider_left" />
                 </div>
                 <div
-                  class="fw-divider-space "
+                  className="fw-divider-space "
                   style={{ paddingTop: `10px` }}
                 ></div>
-                <div class="text-block">
+                <div className="text-block">
                   <p>
                     We provide fast, courteous and inexpensive towing services
                     in New York. We are fully insured and been in business since
@@ -379,80 +400,80 @@ function Intro() {
                     needs 24 hours a day, seven days a week.
                   </p>
                 </div>
-                <div class="icons-list">
-                  <ul class="list1 no-bullets with-border">
+                <div className="icons-list">
+                  <ul className="list1 no-bullets with-border">
                     <li>
-                      <div class="media small-teaser shortcode-icon">
-                        <div class="media-left">
-                          <div class="icon-wrap">
-                            <i class="fa fa-check highlight fontsize_18"></i>
+                      <div className="media small-teaser shortcode-icon">
+                        <div className="media-left">
+                          <div className="icon-wrap">
+                            <i className="fa fa-check highlight fontsize_18"></i>
                           </div>
                         </div>
-                        <div class="media-body">
-                          <span class="title">More than </span>
-                          <span class="text">
+                        <div className="media-body">
+                          <span className="title">More than </span>
+                          <span className="text">
                             <strong>30 years of experience</strong>{" "}
                           </span>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class="media small-teaser shortcode-icon">
-                        <div class="media-left">
-                          <div class="icon-wrap">
-                            <i class="fa fa-check highlight fontsize_18"></i>
+                      <div className="media small-teaser shortcode-icon">
+                        <div className="media-left">
+                          <div className="icon-wrap">
+                            <i className="fa fa-check highlight fontsize_18"></i>
                           </div>
                         </div>
-                        <div class="media-body">
-                          <span class="title">Short arrival time of </span>
-                          <span class="text">
+                        <div className="media-body">
+                          <span className="title">Short arrival time of </span>
+                          <span className="text">
                             <strong>30 minutes or less</strong>{" "}
                           </span>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class="media small-teaser shortcode-icon">
-                        <div class="media-left">
-                          <div class="icon-wrap">
-                            <i class="fa fa-check highlight fontsize_18"></i>
+                      <div className="media small-teaser shortcode-icon">
+                        <div className="media-left">
+                          <div className="icon-wrap">
+                            <i className="fa fa-check highlight fontsize_18"></i>
                           </div>
                         </div>
-                        <div class="media-body">
-                          <span class="title">
+                        <div className="media-body">
+                          <span className="title">
                             Honest competitive prices -{" "}
                           </span>
-                          <span class="text">
+                          <span className="text">
                             <strong>zero hidden fees</strong>{" "}
                           </span>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class="media small-teaser shortcode-icon">
-                        <div class="media-left">
-                          <div class="icon-wrap">
-                            <i class="fa fa-check highlight fontsize_18"></i>
+                      <div className="media small-teaser shortcode-icon">
+                        <div className="media-left">
+                          <div className="icon-wrap">
+                            <i className="fa fa-check highlight fontsize_18"></i>
                           </div>
                         </div>
-                        <div class="media-body">
-                          <span class="title">Friendly and </span>
-                          <span class="text">
+                        <div className="media-body">
+                          <span className="title">Friendly and </span>
+                          <span className="text">
                             <strong>professional service</strong>{" "}
                           </span>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class="media small-teaser shortcode-icon">
-                        <div class="media-left">
-                          <div class="icon-wrap">
-                            <i class="fa fa-check highlight fontsize_18"></i>
+                      <div className="media small-teaser shortcode-icon">
+                        <div className="media-left">
+                          <div className="icon-wrap">
+                            <i className="fa fa-check highlight fontsize_18"></i>
                           </div>
                         </div>
-                        <div class="media-body">
-                          <span class="title">Available </span>
-                          <span class="text">
+                        <div className="media-body">
+                          <span className="title">Available </span>
+                          <span className="text">
                             <strong>24 hours</strong> a day,{" "}
                             <strong>7 days</strong> a week{" "}
                           </span>
@@ -468,22 +489,22 @@ function Intro() {
       </section>
 
       <section
-        class="fw-main-row  ds section_padding_top_130 section_padding_bottom_130 columns_padding_15 parallax section_overlay fullwidth-section background_cover"
+        className="fw-main-row  ds section_padding_top_130 section_padding_bottom_130 columns_padding_15 parallax section_overlay fullwidth-section background_cover"
         style={{
           backgroundImage: `url(assets/img/counters.jpg)`,
         }}
       >
-        <div class="container-fluid">
-          <div class="row">
-            <div class="fw-column col-xs-12 col-md-3">
-              <div class="fw-column-inner">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="fw-column col-xs-12 col-md-3">
+              <div className="fw-column-inner">
                 {" "}
-                <div class="teaser text-center ">
-                  <div class="teaser_icon size_big highlight">
-                    <i class="toyicon-star"></i>
+                <div className="teaser text-center ">
+                  <div className="teaser_icon size_big highlight">
+                    <i className="toyicon-star"></i>
                   </div>
                   <h3
-                    class="counter"
+                    className="counter"
                     data-from="0"
                     data-to="30"
                     data-speed="2200"
@@ -495,15 +516,15 @@ function Intro() {
                 </div>
               </div>
             </div>
-            <div class="fw-column col-xs-12 col-md-3">
-              <div class="fw-column-inner">
+            <div className="fw-column col-xs-12 col-md-3">
+              <div className="fw-column-inner">
                 {" "}
-                <div class="teaser text-center ">
-                  <div class="teaser_icon size_big highlight">
-                    <i class="toyicon-buildings"></i>
+                <div className="teaser text-center ">
+                  <div className="teaser_icon size_big highlight">
+                    <i className="toyicon-buildings"></i>
                   </div>
                   <h3
-                    class="counter"
+                    className="counter"
                     data-from="0"
                     data-to="74"
                     data-speed="3000"
@@ -515,15 +536,15 @@ function Intro() {
                 </div>
               </div>
             </div>
-            <div class="fw-column col-xs-12 col-md-3">
-              <div class="fw-column-inner">
+            <div className="fw-column col-xs-12 col-md-3">
+              <div className="fw-column-inner">
                 {" "}
-                <div class="teaser text-center ">
-                  <div class="teaser_icon size_big highlight">
-                    <i class="toyicon-truck"></i>
+                <div className="teaser text-center ">
+                  <div className="teaser_icon size_big highlight">
+                    <i className="toyicon-truck"></i>
                   </div>
                   <h3
-                    class="counter"
+                    className="counter"
                     data-from="0"
                     data-to="3720"
                     data-speed="1600"
@@ -535,15 +556,15 @@ function Intro() {
                 </div>
               </div>
             </div>
-            <div class="fw-column col-xs-12 col-md-3">
-              <div class="fw-column-inner">
+            <div className="fw-column col-xs-12 col-md-3">
+              <div className="fw-column-inner">
                 {" "}
-                <div class="teaser text-center ">
-                  <div class="teaser_icon size_big highlight">
-                    <i class="toyicon-group"></i>
+                <div className="teaser text-center ">
+                  <div className="teaser_icon size_big highlight">
+                    <i className="toyicon-group"></i>
                   </div>
                   <h3
-                    class="counter"
+                    className="counter"
                     data-from="0"
                     data-to="874"
                     data-speed="1200"
@@ -559,182 +580,182 @@ function Intro() {
         </div>
       </section>
 
-      <section class="py-0" id="flights">
-        <div class="container-fluid">
-          <div class="row h-100">
-            <div class="col-lg-7 mx-auto  text-center mb-6">
-              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">
+      <section className="py-0" id="flights">
+        <div className="container-fluid">
+          <div className="row h-100">
+            <div className="col-lg-7 mx-auto  text-center mb-6">
+              <h5 className="fw-bold fs-3 fs-lg-5 lh-sm mb-3">
                 Towing Parks close to you at the Best Costs
               </h5>
             </div>
           </div>
-          <div class="row g-0 flex-center">
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+          <div className="row g-0 flex-center">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#240D8C`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Chittagong</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Chittagong</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#3011BB`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Sylhet</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Sylhet</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#4914DC`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Chittagong</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Chittagong</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#6213D2`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Chittagong</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Chittagong</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#4611BC`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#7013CE`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Sylhet</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Sylhet</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#4611BC`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#6213D2`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Chittagong</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Chittagong</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#240D8C`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#4914DC`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Sylhet</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Sylhet</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#3011BB`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Chittagong</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Chittagong</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+            <div className="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
               <div
-                class="d-flex flex-column justify-content-center px-3"
+                className="d-flex flex-column justify-content-center px-3"
                 style={{
                   backgroundColor: `#4611BC`,
                   minHeight: `230px`,
                 }}
               >
-                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
-                <h6 class="text-light fw-normal fs-0">From $100</h6>
-                <i class="fas fa-arrow-right text-light mt-4"></i>
-                <a class="stretched-link" href="#!"></a>
+                <h5 className="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 className="text-light fw-normal fs-0">From $100</h6>
+                <i className="fas fa-arrow-right text-light mt-4"></i>
+                <a className="stretched-link" href="#!"></a>
               </div>
             </div>
           </div>

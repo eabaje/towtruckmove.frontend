@@ -88,9 +88,12 @@ class MyDocument extends Document {
             type="text/javascript"
             src="http://webdesign-finder.com/towy/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.8.1"
           ></script>
-
+          <script src="assets/js/jquery.appear.js"></script>
           <script src="vendors/bootstrap/bootstrap.min.js"></script>
+          {/* <script src="assets/js/bootstrap.min.js"></script> */}
           <script src="vendors/fontawesome/all.min.js"></script>
+
+          {/* <script src="assets/js/main.js"></script> */}
         </body>
       </Html>
     );

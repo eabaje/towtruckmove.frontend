@@ -33,11 +33,12 @@ function Index() {
 
   const loadJs = () => {
     if (jQuery().appear) {
+      //alert("hi");
       jQuery(".to_animate").appear();
       jQuery(".to_animate")
         .filter(":appeared")
         .each(function (index) {
-          var self = jQuery(this);
+          var self = $(this);
           var animationClass = !self.data("animation")
             ? "fadeInUp"
             : self.data("animation");
@@ -47,9 +48,9 @@ function Index() {
           }, index * animationDelay);
         });
 
-      jQuery("body").on("appear", ".to_animate", function (e, $affected) {
-        jQuery($affected).each(function (index) {
-          var self = jQuery(this);
+      $("body").on("appear", ".to_animate", function (e, $affected) {
+        $($affected).each(function (index) {
+          var self = $(this);
           var animationClass = !self.data("animation")
             ? "fadeInUp"
             : self.data("animation");
