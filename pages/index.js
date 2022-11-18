@@ -1,7 +1,8 @@
-import { React, useState, useContext } from "react";
+import { React, useState, useContext, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useForm, Controller } from "react-hook-form";
+import $ from "jquery";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
@@ -29,6 +30,69 @@ function Index() {
   // } = useContext(GlobalContext);
 
   // const [isAuthenticated, setIsAuthenticated] = React.useState(isLoggedIn);
+
+  const loadJs = () => {
+    if (jQuery().appear) {
+      jQuery(".to_animate").appear();
+      jQuery(".to_animate")
+        .filter(":appeared")
+        .each(function (index) {
+          var self = jQuery(this);
+          var animationClass = !self.data("animation")
+            ? "fadeInUp"
+            : self.data("animation");
+          var animationDelay = !self.data("delay") ? 210 : self.data("delay");
+          setTimeout(function () {
+            self.addClass("animated " + animationClass);
+          }, index * animationDelay);
+        });
+
+      jQuery("body").on("appear", ".to_animate", function (e, $affected) {
+        jQuery($affected).each(function (index) {
+          var self = jQuery(this);
+          var animationClass = !self.data("animation")
+            ? "fadeInUp"
+            : self.data("animation");
+          var animationDelay = !self.data("delay") ? 210 : self.data("delay");
+          setTimeout(function () {
+            self.addClass("animated " + animationClass);
+          }, index * animationDelay);
+        });
+      });
+
+      //counters init on scroll
+      jQuery(".counter").appear();
+      jQuery(".counter")
+        .filter(":appeared")
+        .each(function (index) {
+          if (jQuery(this).hasClass("counted")) {
+            return;
+          } else {
+            jQuery(this).countTo().addClass("counted");
+          }
+        });
+      jQuery("body").on("appear", ".counter", function (e, $affected) {
+        jQuery($affected).each(function (index) {
+          if (jQuery(this).hasClass("counted")) {
+            return;
+          } else {
+            jQuery(this).countTo().addClass("counted");
+          }
+        });
+      });
+    }
+  };
+
+  useEffect(() => {
+    //let controller = new AbortController();
+    if (typeof window !== "undefined") {
+      loadJs();
+      // $("#sidemenu-nav").metisMenu();
+    }
+    // user===null &&  history.push(`sigin`)
+    //  setUser(JSON.parse(localStorage.getItem("user")));
+    //  return () => controller?.abort();
+  }, []);
 
   const onSubmit = async (formdata) => {
     signin2(formdata)(authDispatch)((res) => {

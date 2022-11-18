@@ -336,7 +336,7 @@ function Intro() {
         <div class="container">
           <div class="row">
             <div
-              class="fw-column col-xs-12 col-md-6  text-center col-lg-7"
+              class="fw-column col-xs-12 col-md-6 to_animate text-center col-lg-7"
               data-animation="fadeInLeft"
             >
               <div class="fw-column-inner padding_30">
@@ -348,7 +348,7 @@ function Intro() {
               </div>
             </div>
             <div
-              class="fw-column col-xs-12 col-md-6  text-left col-lg-5"
+              class="fw-column col-xs-12 col-md-6 to_animate text-left col-lg-5"
               data-animation="fadeInRight"
             >
               <div class="fw-column-inner">
@@ -562,7 +562,7 @@ function Intro() {
       <section class="py-0" id="flights">
         <div class="container-fluid">
           <div class="row h-100">
-            <div class="col-lg-7 mx-auto text-center mb-6">
+            <div class="col-lg-7 mx-auto  text-center mb-6">
               <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">
                 Towing Parks close to you at the Best Costs
               </h5>
