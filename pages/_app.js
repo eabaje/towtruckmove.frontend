@@ -1,5 +1,3 @@
-//import "../styles/globals.css";
-
 import "../styles/globals.css";
 import GlobalProvider from "../context/Provider";
 

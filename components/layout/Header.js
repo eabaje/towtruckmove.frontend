@@ -1,111 +1,99 @@
-import React, { useEffect } from 'react'
-import Link from 'next/link'
+import React, { useEffect } from "react";
+import Link from "next/link";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { loadUser } from '../../redux/actions/userActions'
-import { signOut } from 'next-auth/client'
+import { useDispatch, useSelector } from "react-redux";
+import { loadUser } from "../../redux/actions/userActions";
+import { signOut } from "next-auth/client";
 
 const Header = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  const { user, loading } = useSelector((state) => state.loadedUser);
 
-    const { user, loading } = useSelector(state => state.loadedUser)
-
-    useEffect(() => {
-        if (!user) {
-            dispatch(loadUser())
-        }
-    }, [dispatch, user])
-
-
-    const logoutHandler = () => {
-        signOut();
+  useEffect(() => {
+    if (!user) {
+      dispatch(loadUser());
     }
+  }, [dispatch, user]);
 
-    return (
-        <nav className="navbar row justify-content-center sticky-top">
-            <div className="container">
-                <div className="col-3 p-0">
-                    <div className="navbar-brand">
-                        <Link href='/'>
-                            <img style={{ cursor: 'pointer' }} src="/images/bookit_logo.png" alt="BookIT" />
-                        </Link>
-                    </div>
-                </div>
+  const logoutHandler = () => {
+    signOut();
+  };
 
-                <div className="col-3 mt-3 mt-md-0 text-center">
+  return (
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
+      data-navbar-on-scroll="data-navbar-on-scroll"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="d-inline-block"
+            src="assets/img/gallery/logo.png"
+            width="50"
+            alt="logo"
+          />
+          <span class="fw-bold text-primary ms-2">TowTruckMove</span>
+        </a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
+            <li class="nav-item px-2">
+              <a
+                class="nav-link fw-medium active"
+                aria-current="page"
+                href="#destinations"
+              >
+                <span class="nav-link-icon text-800 me-1 fas fa-map-marker-alt"></span>
+                <span class="nav-link-text">Locations </span>
+              </a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#flights">
+                {" "}
+                <span class="nav-link-icon text-800 me-1 fas fa-plane"></span>
+                <span class="nav-link-text">Flights</span>
+              </a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#hotels">
+                {" "}
+                <span class="nav-link-icon text-800 me-1 fas fa-hotel"></span>
+                <span class="nav-link-text">Hotels</span>
+              </a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#activities">
+                <span class="nav-link-icon text-800 me-1 fas fa-bolt"></span>
+                <span class="nav-link-text">Activities</span>
+              </a>
+            </li>
+          </ul>
+          <form>
+            <button class="btn text-800 order-1 order-lg-0 me-2" type="button">
+              Support
+            </button>
+            <button class="btn btn-voyage-outline order-0" type="submit">
+              <span class="text-primary">Sign in</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-                    {user ? (
-                        <div className="ml-4 dropdown d-line">
-                            <a
-                                className="btn dropdown-toggle mr-4"
-                                id='dropDownMenuButton'
-                                data-toggle='dropdown'
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                <figure className="avatar avatar-nav">
-                                    <img
-                                        src={user.avatar && user.avatar.url}
-                                        alt={user && user.name}
-                                        className="rounded-circle"
-                                    />
-                                </figure>
-                                <span>{user && user.name}</span>
-                            </a>
-
-                            <div className="dropdown-menu" aria-labelledby='dropDownMenuButton'>
-
-                                {user.role === 'admin' && (
-                                    <>
-
-                                        <Link href='/admin/rooms'>
-                                            <a className="dropdown-item">Rooms</a>
-                                        </Link>
-
-                                        <Link href='/admin/bookings'>
-                                            <a className="dropdown-item">Bookings</a>
-                                        </Link>
-
-                                        <Link href='/admin/users'>
-                                            <a className="dropdown-item">Users</a>
-                                        </Link>
-
-                                        <Link href='/admin/reviews'>
-                                            <a className="dropdown-item">Reviews</a>
-                                        </Link>
-
-                                        <hr />
-
-                                    </>
-                                )}
-
-                                <Link href='/bookings/me'>
-                                    <a className="dropdown-item">My Bookings</a>
-                                </Link>
-
-                                <Link href='/me/update'>
-                                    <a className="dropdown-item">Profile</a>
-                                </Link>
-
-                                <Link href='/'>
-                                    <a className="dropdown-item text-danger" onClick={logoutHandler}>Logout</a>
-                                </Link>
-
-                            </div>
-
-                        </div>
-                    ) :
-                        !loading && <Link href='/login'>
-                            <a className="btn btn-danger px-4 text-white login-header-btn float-right">Login</a>
-                        </Link>
-                    }
-
-
-                </div>
-            </div>
-        </nav>
-    )
-}
-
-export default Header
+export default Header;
