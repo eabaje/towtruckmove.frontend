@@ -58,7 +58,7 @@ const Header = () => {
                 href="#destinations"
               >
                 <span class="nav-link-icon text-800 me-1 fas fa-map-marker-alt"></span>
-                <span class="nav-link-text">Locations </span>
+                <span class="nav-link-text">Park Locations </span>
               </a>
             </li>
             <li class="nav-item px-2">
