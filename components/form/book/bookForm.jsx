@@ -23,6 +23,9 @@ import "react-datepicker/dist/react-datepicker.css";
 // import UpdateUserFileUpload from "../../../components/upload/edit-user-file-upload";
 import { toast } from "react-toastify";
 import dynamic from "next/dynamic";
+import { usePaystackPayment } from "react-paystack";
+import { Public_Key } from "../../../constants";
+import { createPayment } from "../../../context/actions/payment/payment.action";
 
 const BookForm = (props) => {
   // const { userId, companyId } = query;
@@ -502,11 +505,11 @@ const BookForm = (props) => {
               aria-labelledby="nav-contact-tab"
             >
               <form className="row g-4 mt-5">
-                <div className="col-6">
+                <div className="col-12">
                   <div className="input-group-icon">
                     <input
                       className="form-control input-box form-voyage-control"
-                      id="inputDateFive"
+                      id="Credicard"
                       type="date"
                     />
                     <span className="nav-link-icon text-800 fs--1 input-box-icon">
