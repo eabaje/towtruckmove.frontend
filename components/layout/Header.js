@@ -64,15 +64,15 @@ const Header = () => {
             <li class="nav-item px-2">
               <a class="nav-link" href="#flights">
                 {" "}
-                <span class="nav-link-icon text-800 me-1 fas fa-plane"></span>
-                <span class="nav-link-text">Flights</span>
+                <span class="nav-link-icon text-800 me-1 fas fa-info"></span>
+                <span class="nav-link-text">About Us</span>
               </a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="#hotels">
                 {" "}
-                <span class="nav-link-icon text-800 me-1 fas fa-hotel"></span>
-                <span class="nav-link-text">Hotels</span>
+                <span class="nav-link-icon text-800 me-1 fas fa-wrench"></span>
+                <span class="nav-link-text">Services</span>
               </a>
             </li>
             <li class="nav-item px-2">

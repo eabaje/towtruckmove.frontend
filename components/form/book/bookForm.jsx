@@ -15,8 +15,8 @@ import {
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import CustomButton from "../../../components/button/customButton";
-import ImageUpload from "../../../components/upload/uploadImage";
+// import CustomButton from "../../../components/button/customButton";
+// import ImageUpload from "../../../components/upload/uploadImage";
 //import "../../../styles/form.module.css";
 // import { SPECIALIZATION_TYPE } from "../../../constants/enum";
 // import CustomPopup from "../../../components/popup/popup.component";
@@ -28,7 +28,7 @@ const BookForm = (props) => {
   // const { userId, companyId } = query;
 
   // const isSingleMode = !userId;
-
+  const [formStep, setFormStep] = useState(0);
   const [profile, setProfile] = useState({});
   const [companyInfo, setCompanyInfo] = useState({});
 
@@ -253,11 +253,312 @@ const BookForm = (props) => {
       </div>
     );
   });
-  CustomInput.displayName = "CustomInput";
-  console.log("ShowProfile", showProfile);
+  // CustomInput.displayName = "CustomInput";
+  // console.log("ShowProfile", showProfile);
   return (
     <>
-      <form class="account-setting-form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="pt-5">
+        <nav>
+          <div className="nav nav-tabs voyage-tabs" id="nav-tab" role="tablist">
+            <button
+              className="nav-link active"
+              id="nav-home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-home"
+              type="button"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+            >
+              <i className="fas fa-map-marker-alt"></i>
+            </button>
+            <button
+              className="nav-link"
+              id="nav-profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-profile"
+              type="button"
+              role="tab"
+              aria-controls="nav-profile"
+              aria-selected="false"
+            >
+              {" "}
+              <i className="fas fa-truck"></i>
+            </button>
+            <button
+              className="nav-link"
+              id="nav-contact-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-contact"
+              type="button"
+              role="tab"
+              aria-controls="nav-contact"
+              aria-selected="false"
+            >
+              {" "}
+              <i className="fas fa-file-invoice"></i>
+            </button>
+          </div>
+          <div className="tab-content" id="nav-tabContent">
+            <div
+              className={
+                formStep === 0 ? "tab-pane fade show active" : "tab-pane fade"
+              }
+              id="nav-home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+            >
+              <form className="row g-4 mt-5" onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  type="hidden"
+                  name="RelationType"
+                  value={props.relationType}
+                  className="form-control"
+                  {...register("relationType")}
+                />
+                <input
+                  type="hidden"
+                  name="UserId"
+                  value={props.UserId}
+                  className="form-control"
+                  {...register("UserId")}
+                />
+                <div className="col-sm-12 col-md-12 col-xl-12">
+                  <div className="input-group-icon">
+                    <label
+                      className="form-label visually-hidden"
+                      for="FromWhere"
+                    >
+                      Address 1
+                    </label>
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="FromWhere"
+                      name="FromWhere"
+                      type="text"
+                      placeholder="From where"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-map-marker-alt"></i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-12 col-xl-12">
+                  <div className="input-group-icon">
+                    <label className="form-label visually-hidden" for="ToWhere">
+                      Address 2
+                    </label>
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="ToWhere"
+                      name="ToWhere"
+                      type="text"
+                      placeholder="To where"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-map-marker-alt"> </i>
+                    </span>
+                  </div>
+                </div>
+                {/* <div className="col-sm-6 col-md-6 col-xl-5">
+                  <div className="input-group-icon">
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="inputdateOne"
+                      type="date"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-sm-6 col-md-6 col-xl-5">
+                  <div className="input-group-icon">
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="inputDateTwo"
+                      type="date"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div> */}
+                <div className="col-sm-12 col-md-12 col-xl-12">
+                  <div className="input-group-icon">
+                    <label
+                      className="form-label visually-hidden"
+                      for="VehicleType"
+                    >
+                      Person
+                    </label>
+                    <select
+                      className="form-select form-voyage-select input-box"
+                      id="VehicleType"
+                      name="VehicleType"
+                    >
+                      <option selected="selected">Vehicle Type</option>
+                      <option>Sedan</option>
+                      <option>SUV</option>
+                      <option>Truck</option>
+                      <option>Articulated Vehicle</option>
+                    </select>
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-car"> </i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-12 col-xl-12">
+                  <div className="input-group-icon">
+                    <label
+                      className="form-label visually-hidden"
+                      for="inputPersonOne"
+                    >
+                      Person
+                    </label>
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="inputAddress1"
+                      type="text"
+                      placeholder="Vehicle Number"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-car"> </i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-12 col-xl-12">
+                  <div className="input-group-icon">
+                    <label
+                      className="form-label visually-hidden"
+                      for="inputPersonOne"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="inputPhone"
+                      type="text"
+                      placeholder="Phone Number"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-phone"> </i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-12 col-xl-10 col-lg-12 d-grid mt-6">
+                  <button className="btn btn-secondary" type="submit">
+                    Get Nearest Towing Truck
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              className={
+                formStep === 1 ? "tab-pane fade show active" : "tab-pane fade"
+              }
+              id="nav-profile"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <form className="row g-4 mt-5">
+                <div className="col-sm-12 col-md-12 col-xl-12">
+                  <div className="input-group-icon">
+                    <label
+                      className="form-label visually-hidden"
+                      for="inputPersonOne"
+                    >
+                      Preferred Park
+                    </label>
+                    <select
+                      className="form-select form-voyage-select input-box"
+                      id="VehicleType"
+                    >
+                      <option selected="selected">Park List</option>
+                      <option>Sedan</option>
+                      <option>SUV</option>
+                      <option>Truck</option>
+                      <option>Articulated Vehicle</option>
+                    </select>
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-truck"> </i>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="col-12 d-grid mt-6">
+                  <button className="btn btn-secondary" type="submit">
+                    Choose Tow Service
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              className={
+                formStep === 2 ? "tab-pane fade show active" : "tab-pane fade"
+              }
+              id="nav-contact"
+              role="tabpanel"
+              aria-labelledby="nav-contact-tab"
+            >
+              <form className="row g-4 mt-5">
+                <div className="col-6">
+                  <div className="input-group-icon">
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="inputDateFive"
+                      type="date"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="input-group-icon">
+                    <input
+                      className="form-control input-box form-voyage-control"
+                      id="inputDateSix"
+                      type="date"
+                    />
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="input-group-icon">
+                    <label
+                      className="form-label visually-hidden"
+                      for="inputPeopleThree"
+                    >
+                      Person
+                    </label>
+                    <select
+                      className="form-select form-voyage-select input-box"
+                      id="inputPeopleThree"
+                    >
+                      <option selected="selected">2 Adults</option>
+                      <option>2 Adults 1 children</option>
+                      <option>2 Adults 2 children</option>
+                    </select>
+                    <span className="nav-link-icon text-800 fs--1 input-box-icon">
+                      <i className="fas fa-user"> </i>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-12 d-grid mt-6">
+                  <button className="btn btn-secondary" type="submit">
+                    Search Packages
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      {/* <form class="account-setting-form" onSubmit={handleSubmit(onSubmit)}>
         <h3>{props.title ? props.title : "Siblings Information"}</h3>
         <input
           type="hidden"
@@ -402,7 +703,7 @@ const BookForm = (props) => {
             </button>
           </div>
         </div>
-      </form>
+      </form> */}
     </>
   );
 };
