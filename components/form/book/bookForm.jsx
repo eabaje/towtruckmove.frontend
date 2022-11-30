@@ -236,6 +236,42 @@ const BookForm = (props) => {
     });
   }
 
+  const config = {
+    reference: new Date().getTime(),
+    email: user?.Email,
+    amount: amt * 100,
+    publicKey: Public_Key,
+  };
+
+  const initializePayment = usePaystackPayment(config);
+
+  const onSuccess = (reference) => {
+    // Implementation for whatever you want to do with reference and after success call.
+    //log in payment
+    const formPayment = {
+      UserId: user?.UserId,
+      PaymentSessionId: reference.trans,
+      ReferenceId: reference.reference,
+      OrderStatus: ORDER_STATUS.find((item) => item.text === "Processed").value,
+      PaymentMethod: subscribeUser.User?.PaymentMethod,
+
+      TotalPrice: amt * 100,
+
+      PaymentDate: new Date(),
+    };
+
+    createPayment(formPayment)(paymentDispatch)((res) => {
+      //   console.log("formdata@CreatePayment", formPost);
+      isAddMode
+        ? createUserSubscription(formPost)
+        : subscriptionChange
+        ? UpgradeUserSubscription(formPost)
+        : UpdateUserSubscription(userSubscriptionId, formPost);
+    })((err) => {
+      toast.error(err);
+    });
+  };
+
   const CustomInput = React.forwardRef(({ value, onClick }, ref) => {
     return (
       <div className="input-group mb-3">
@@ -340,6 +376,9 @@ const BookForm = (props) => {
                       name="FromWhere"
                       type="text"
                       placeholder="From where"
+                      {...register("FromWhere", {
+                        required: true,
+                      })}
                     />
                     <span className="nav-link-icon text-800 fs--1 input-box-icon">
                       <i className="fas fa-map-marker-alt"></i>
@@ -357,6 +396,9 @@ const BookForm = (props) => {
                       name="ToWhere"
                       type="text"
                       placeholder="To where"
+                      {...register("ToWhere", {
+                        required: true,
+                      })}
                     />
                     <span className="nav-link-icon text-800 fs--1 input-box-icon">
                       <i className="fas fa-map-marker-alt"> </i>
@@ -399,6 +441,9 @@ const BookForm = (props) => {
                       className="form-select form-voyage-select input-box"
                       id="VehicleType"
                       name="VehicleType"
+                      {...register("ToWhere", {
+                        required: true,
+                      })}
                     >
                       <option selected="selected">Vehicle Type</option>
                       <option>Sedan</option>
@@ -421,9 +466,13 @@ const BookForm = (props) => {
                     </label>
                     <input
                       className="form-control input-box form-voyage-control"
-                      id="inputAddress1"
+                      id="VehicleNumber"
+                      name="VehicleNumber"
                       type="text"
                       placeholder="Vehicle Number"
+                      {...register("VehicleNumber", {
+                        required: true,
+                      })}
                     />
                     <span className="nav-link-icon text-800 fs--1 input-box-icon">
                       <i className="fas fa-car"> </i>
@@ -443,6 +492,9 @@ const BookForm = (props) => {
                       id="inputPhone"
                       type="text"
                       placeholder="Phone Number"
+                      {...register("VehicleNumber", {
+                        required: true,
+                      })}
                     />
                     <span className="nav-link-icon text-800 fs--1 input-box-icon">
                       <i className="fas fa-phone"> </i>
