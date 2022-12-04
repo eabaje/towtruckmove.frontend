@@ -257,7 +257,7 @@ function Intro() {
         </div>
       </section>
 
-      <section className="py-0" id="flights">
+      <section className="py-0" id="parks">
         <div className="container-fluid">
           <div className="row h-100">
             <div className="col-lg-7 mx-auto  text-center mb-6">

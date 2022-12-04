@@ -55,21 +55,21 @@ const Header = () => {
               <a
                 class="nav-link fw-medium active"
                 aria-current="page"
-                href="#destinations"
+                href="#parks"
               >
                 <span class="nav-link-icon text-800 me-1 fas fa-map-marker-alt"></span>
                 <span class="nav-link-text">Park Locations </span>
               </a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="#flights">
+              <a class="nav-link" href="#about">
                 {" "}
                 <span class="nav-link-icon text-800 me-1 fas fa-info"></span>
                 <span class="nav-link-text">About Us</span>
               </a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="#hotels">
+              <a class="nav-link" href="#services">
                 {" "}
                 <span class="nav-link-icon text-800 me-1 fas fa-wrench"></span>
                 <span class="nav-link-text">Services</span>
